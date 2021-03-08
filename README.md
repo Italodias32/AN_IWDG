@@ -1,13 +1,14 @@
 # AN_IWDG
 
 This is an application note about IWDG for STM32 using STM32F103RB and developed in STMCubeIDE1.3.0
+
 Developed by Italo Dias and Sarah Oliveira
 
 ## Introduction
 
 This program was developed as a work in the discipline of Embedded Systems Programming at UFMG - Prof. Ricardo de Oliveira Duarte - Department of Electronic Engineering. The program was developed and tested with STM32F103RB and developed in STMCubeIDE1.3.0. 
 The example presented is located in the “Core / Src / main.c” directory and proposes to publicly present, in a didactic way, the usefulness of the Independent Watchdog peripheral (IWDG) through an application example. 
-The example implemented with the Independent Watchdog peripheral explores two of its features: the restart of the microcontroller and its internal clock. The example can be observed visually, with the activation of one of the LED for a certain time, which can be configured by the values ​​“counter clock prescaler” and “down-counter reload value”. These data consist, respectively, of the clock frequency division value and the counter reload value (which will count downwards), together to define the clock timeout period. These data are inserted in the STM32CubeIDE1.3.0 interface, in the “.ioc” area.
+The example implemented with the Independent Watchdog peripheral explores two of its features: the restart of the microcontroller and its internal clock. The example can be observed visually, with the activation of one of the LED for a certain time, which can be configured by the values “counter clock prescaler” and “down-counter reload value”. These data consist, respectively, of the clock frequency division value and the counter reload value (which will count downwards), together to define the clock timeout period. These data are inserted in the STM32CubeIDE1.3.0 interface, in the “.ioc” area.
 In the sequence, the implemented code initializes the dynamics with the writing of "0xAAAA" in the Key Register to reload the counter, and with the writing of "0xCCCC" in the Key Register to promote initialization. This procedure is identified and preceded by turning on the first LED.
 Then, the dynamics of turning on / off a second LED in an infinite loop is implemented. Thus, when it is identified that the button has been pressed, the second LED lights up and remains on for 1 second. Then the two LEDs are extinguished and the watchdog counter is reloaded by writing “0xAAAA” in the Key Register. Finally, after half a second, the code resets.
 
