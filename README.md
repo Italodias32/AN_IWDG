@@ -31,3 +31,8 @@ Although crashes in the execution of an application in microcontrollers occur ra
 8. Recharge the watchdog counter.
 9. Waits for 5s.
 10. Resetting the code / Return to step 2.
+
+## References
+[1.] Slides provided by the teacher: Lesson 12.
+[2.] ST Microelectronics. RM0008 (Reference manual). STM32F101xx, STM32F102xx, STM32F103xx, STM32F105xx and STM32F107xx advanced ARM®-based 32-bit MCUs.
+[3.] [STM32WB - IWDG](https://www.st.com/content/ccc/resource/training/technical/product_training/group0/01/24/22/29/38/70/40/57/STM32WB-WDG_TIMERS-Independent-Watchdog-IWDG/files/STM32WB-WDG_TIMERS-Independent-Watchdog-IWDG.pdf/jcr:content/translations/en.STM32WB-WDG_TIMERS-Independent-Watchdog-IWDG.pdf) - More about IWDG
