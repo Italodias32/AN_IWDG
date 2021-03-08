@@ -16,6 +16,23 @@ In the sequence, the implemented code initializes the dynamics with the writing 
 
 Then, the dynamics of turning on / off a second LED in an infinite loop is implemented. Thus, when it is identified that the button has been pressed, the second LED lights up and remains on for 1 second. Then the two LEDs are extinguished and the watchdog counter is reloaded by writing “0xAAAA” in the Key Register. Finally, after half a second, the code resets.
 
+```c
+  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
+  IWDG->KR = 0xAAAA;
+  IWDG->KR = 0xCCCC;
+  while (1)
+  {
+	  if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_10) == GPIO_PIN_RESET){
+		      HAL_GPIO_WritePin(GPIOA,GPIO_PIN_6,GPIO_PIN_SET);
+		      HAL_Delay(1000);
+	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_6,GPIO_PIN_RESET);
+	  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);
+	  		  IWDG->KR = 0xAAAA; //Reset Code
+	  		  HAL_Delay(5000);
+	  }
+  }
+```
+
 <div align="center"><img src="https://user-images.githubusercontent.com/38631264/110269719-0e39d500-7fa3-11eb-96c4-645d102a3dfe.gif" width="700"></div>
 
 ## Peripheral presentation
