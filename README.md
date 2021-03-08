@@ -11,7 +11,7 @@ The example implemented with the Independent Watchdog peripheral explores two of
 In the sequence, the implemented code initializes the dynamics with the writing of "0xAAAA" in the Key Register to reload the counter, and with the writing of "0xCCCC" in the Key Register to promote initialization. This procedure is identified and preceded by turning on the first LED.
 Then, the dynamics of turning on / off a second LED in an infinite loop is implemented. Thus, when it is identified that the button has been pressed, the second LED lights up and remains on for 1 second. Then the two LEDs are extinguished and the watchdog counter is reloaded by writing “0xAAAA” in the Key Register. Finally, after half a second, the code resets.
 
-<div align="center"><img src="https://user-images.githubusercontent.com/38631264/110269719-0e39d500-7fa3-11eb-96c4-645d102a3dfe.gif" width="450"></div>
+<div align="center"><img src="https://user-images.githubusercontent.com/38631264/110269719-0e39d500-7fa3-11eb-96c4-645d102a3dfe.gif" width="700"></div>
 
 ## Peripheral presentation
 
